@@ -5881,8 +5881,8 @@ uint32_t readScandefHash(ecmdChipTarget & target, const char* i_ringName, const 
     bool foundLatch = false;
 
     // Base hash key off of base latch name, particularly for array entries.  Remove array index.
-    latchHashKey32 = ecmdHashString32((latchName.substr(0,latchName.find_last_of("("))).c_str(), 0);
-    latchHashKey64 = ecmdHashString64((latchName.substr(0,latchName.find_last_of("("))).c_str(), 0);
+    latchHashKey32 = ecmdHashString32(latchName.c_str(), 0);
+    latchHashKey64 = ecmdHashString64(latchName.c_str(), 0);
     fullLatchHashKey64 = ecmdHashString64(latchName.c_str(), 0);
 
     /* Transform to lower case for case-insensitive comparisons */
